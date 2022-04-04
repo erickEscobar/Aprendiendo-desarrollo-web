@@ -1,0 +1,31 @@
+h1{
+    text-align: center;
+    color: crimson;
+    font-size: 2em;
+}
+
+.contenedor{
+    border: 6px dashed greenyellow;
+    max-width: 40%;
+    margin: auto;
+    position: relative;
+}
+
+.html{
+    max-width: 100%;
+    opacity: 0.4;
+}
+
+.html:hover{
+    opacity: 1;
+}
+
+.texto{
+    font-family: cursive;
+    font-size: 1.3em;
+    text-align: center;
+    text-shadow: 3px 3px 3px rgb(51, 47, 47);
+    position: absolute;
+    bottom: 46%;
+    left: 40%;
+}

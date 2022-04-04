@@ -1,0 +1,35 @@
+h1{
+    text-align: center;
+    color: brown;
+}
+
+div.contenedor{
+    width: 30%;
+    height: 30%;
+    margin: auto;
+    border: 3px solid #8babe6;
+    padding: 15px;
+    color: #457b9d;
+    overflow: hidden;
+    text-align: center;
+}
+
+div.contenedor:hover{
+    background-color: #457b9d;
+    color: #f1faee;
+}
+
+div.contenedor.oculto p{
+    display: none;
+}
+
+div.contenedor.oculto:hover p{
+    display: block;
+    background-color: #a8dadc;
+    color: blue;
+    padding: 15px;
+}
+
+div.contenedor.primero p:first-child{
+    font-variant: small-caps;
+}

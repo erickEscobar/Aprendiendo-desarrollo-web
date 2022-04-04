@@ -1,0 +1,23 @@
+.titulo{
+    color: #FA6EA5;
+    text-align: center;
+}
+.marco{
+    width: 100%;
+    height: 200px;
+    border: dashed;
+}
+.boton{
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    background-color: #C3FBAD;
+    padding: 10px;
+}
+.boton:hover{
+    background-color: #96C744;
+}
+div{
+    margin: 10px;
+    text-align: center;
+}

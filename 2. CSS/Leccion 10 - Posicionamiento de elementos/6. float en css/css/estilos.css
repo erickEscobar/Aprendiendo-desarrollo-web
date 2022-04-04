@@ -1,0 +1,34 @@
+h1{
+    text-align: center;
+    color: crimson;
+    font-size: 2em;
+}
+
+.contenedor{
+    width: 30%;
+    height: 100px;
+    overflow: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.contenedor.n1{
+    float: left;
+    border: 3px dashed greenyellow;
+}
+
+.contenedor.n2{
+    float: right;
+    border: 3px dashed blue;
+}
+
+.n3{
+    clear: both;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.contenedor.n4{
+    margin: auto;
+    border: 3px dashed orange;
+}

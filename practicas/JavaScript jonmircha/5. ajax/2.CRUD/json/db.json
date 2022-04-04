@@ -1,0 +1,56 @@
+{
+  "DragonBall": [
+    {
+      "nombre": "Vegeta",
+      "transformacion": "Mega instinto",
+      "id": 1
+    },
+    {
+      "nombre": "Goku",
+      "transformacion": "Ultra instinto",
+      "id": 2
+    },
+    {
+      "nombre": "Gojan",
+      "transformacion": "Definitivo",
+      "id": 3
+    },
+    {
+      "nombre": "Krilin",
+      "transformacion": "Humano",
+      "id": 4
+    },
+    {
+      "nombre": "Bills",
+      "transformacion": "Dios",
+      "id": 5
+    },
+    {
+      "nombre": "Krilin",
+      "transformacion": "Humano",
+      "id": 6
+    }
+  ],
+  "Doraemon": [
+    {
+      "id": 1,
+      "nombre": "Nobita",
+      "inteligente": false
+    },
+    {
+      "id": 2,
+      "nombre": "Suneo",
+      "inteligente": false
+    },
+    {
+      "id": 3,
+      "nombre": "Gigante",
+      "inteligente": false
+    },
+    {
+      "id": 4,
+      "nombre": "Doraemon",
+      "inteligente": true
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+
+html{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    /* background: rgb(155, 155, 155); */
+    background: #981c1c;
+    background: linear-gradient(168deg,#981c1c 0%, #2b99c6 80%);
+    background: -webkit-linear-gradient(168deg,#981c1c 0%, #2b99c6 80%);
+    background: -moz-linear-gradient(168deg,#981c1c 0%, #2b99c6 80%);
+    background-attachment: fixed;
+}
+
+/* Header */
+header{
+    align-content: center;
+    position: relative;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+a{
+    margin: 5px;
+    text-decoration: none;
+    color: blanchedalmond;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+a#perfil div{
+    width: 20px;
+    border-radius: 100px;
+}
+
+a#perfil img{
+    width: 100%;
+}
+
+/* Google */
+#google{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 3em;
+    font-family: 'Noto Sans', sans-serif;
+    color: white;
+    text-shadow: 6px 6px 10px rgb(41, 33, 33);
+}
+#google a:hover{
+    text-decoration: none;
+}
+
+/* Busqueda */
+#busqueda form{
+    max-width: 500px;
+    height: 30px;
+    padding: 5px;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+#busqueda i{
+    cursor: pointer;
+}
+
+#buscador{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.9em;
+    margin-left: 5px;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+/*  */
+#iconos{
+    max-width: 500px;
+    margin: 40px auto 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#iconos p{
+    margin: 10px 12px;
+    width: 75px;
+    height: 60px;
+}
+
+#iconos p i{
+    font-size: 3em;
+    padding: 10px;
+}
+
+#iconos p:hover i{
+    font-size: 3.2em;
+    color: blue;
+    background-color: rgba(231, 223, 223, 0.404);
+    border-radius: 10px;
+}

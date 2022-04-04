@@ -1,0 +1,44 @@
+#titulo{
+    text-align: center;
+    font-size: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.punteado{
+    border-style: dotted;
+    border-width: 10px 8px 5px 3px;
+    border-color: orange blue red green;
+}
+.discontinuo{
+    border-style: dashed;
+    border-width: 10px 8px 5px;
+}
+.solido{
+    border: 10px solid orange;
+    border-radius: 20% 0 20% 0;
+}
+.doble{
+    border: 5px double;
+    border-width: 8px 5px;
+}
+.surco{
+    border: 10px groove;
+}
+.cresta{
+    border: 10px ridge;
+}
+.recuadro{
+    border: 10px inset;
+}
+.recuadro-externo{
+    border: 10px outset;
+}
+.sin-borde{
+    border: none;
+}
+.oculto{
+    border: hidden;
+}
+.mixto{
+    border-style: groove double dotted dotted;
+}

@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* Reloj */
+div{
+    background: rgba(255, 166, 0, 0.63);
+    width: 250px;
+    height: 250px;
+    clip-path: circle(50% at 50% 50%);
+    background-image: url(../img/clock-42809.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+#cajaSegundo{
+    transform: rotate(90deg);
+}
+#segundero{
+    position: absolute;
+    left: 20px;
+    outline: 1px solid #5EFFC7;
+    width: 100px;
+}
+#cajaMinuto{
+    transform: rotate(180deg);
+}
+#minutero{
+    position: absolute;
+    left: 35px;
+    outline: 1px solid #C75EFF;
+    width: 85px;
+}
+#cajaHora{
+    transform: rotate(366deg);
+}
+#horero{
+    position: absolute;
+    left: 50px;
+    outline: 1px solid;
+    width: 70px;
+}

@@ -1,0 +1,16 @@
+body{
+    background-color: dodgerblue;
+    color: cornsilk;
+    background-image: url("../imagenes/fondo.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+h1{
+    text-align: center;
+    background-color: dodgerblue;
+}
+p{
+    padding: 100000px 100px;
+}

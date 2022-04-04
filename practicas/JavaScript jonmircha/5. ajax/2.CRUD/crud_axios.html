@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD API REST AXIOS</title>
+</head>
+<body>
+    <h1>CRUD API REST AXIOS</h1>
+    <section class="crud">
+        <article>
+            <h2 class="crud-title">Agregar personaje de dragon ball</h2>
+            <form action="" class="crud-form">
+                <input type="text" name="nombre" placeholder="nombre" required><br>
+                <input type="text" name="transformacion" placeholder="transformacion" required><br>
+                <input type="submit" value="Enviar">
+                <input type="hidden" name="id">
+            </form>
+        </article>
+        <article>
+            <h2>Ver personajes de dragon ball</h2>
+            <table class="crud-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Tranformación</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </article>
+    </section>
+    <template id="crud-template">
+        <tr>
+            <td class="name">Goku</td>
+            <td class="transformacion">Ultra instinto</td>
+            <td>
+                <button class="edit">Editar</button>
+                <button class="delete">Eliminar</button>
+            </td>
+        </tr>
+    </template>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        const $table = document.querySelector(".crud-table"),
+            $title = document.querySelector(".crud-title"),
+            $form = document.querySelector(".crud-form"),
+            $template = document.getElementById("crud-template"),
+            fragment = document.createDocumentFragment();
+        let clon = document.createElement('div');
+
+        const getAll = async () => {
+            try {
+                let res = await axios.get("http://localhost:5555/DragonBall"),
+                    json = await res.data;
+
+                // console.log(res, "f", json);
+
+                json.forEach(element => {
+                        clon.appendChild($template.content.cloneNode(true));//Clonamos el template porque no se puede utilizar
+
+                        clon.querySelector(".name").textContent = element.nombre;
+                        clon.querySelector(".transformacion").textContent = element.transformacion;
+                        clon.querySelector(".edit").dataset.id = element.id;
+                        clon.querySelector(".edit").dataset.name = element.nombre;
+                        clon.querySelector(".edit").dataset.transformacion = element.transformacion;
+                        clon.querySelector(".delete").dataset.id = element.id;
+
+                        fragment.appendChild(clon.querySelector('tr'));
+                   });
+                   $table.querySelector('tbody').appendChild(fragment);
+            } 
+            catch (err) {
+                // console.log(err.response);
+                let message = err.response.statusText || "Ocurrio un error";
+                $table.insertAdjacentHTML("afterend", `<p>Error ${err.response.status}: ${message}</p>`)
+            }
+        };
+        document.addEventListener("DOMContentLoaded", getAll);
+
+        document.addEventListener("submit", e => {
+            if(e.target === $form){
+                e.preventDefault();
+
+                if(!e.target.id.value){
+                    //CREATE - POST
+                    const post = async () => {
+                        try {
+                            let res = await axios("http://localhost:5555/DragonBall", {
+                                method: "post",
+                                headers: {
+                                    "Content-Type": "application/json"
+                                },
+                                data: {
+                                    nombre: e.target.nombre.value,
+                                    transformacion: e.target.transformacion.value 
+                                }
+                            });
+                            let json = await res.data();
+
+                            location.reload();
+                        } catch (err) {
+                            // console.log(err);
+                            let message = err.response.statusText || "Ocurrio un error";
+                            $form.insertAdjacentHTML("afterend", `<p>Error ${err.response.status}: ${message}</p>`);
+                        }
+                    }
+                    post();
+                }
+                else{
+                    //UPDATE - PUT
+                    const put = async () => {
+                        try {
+                            let res = await axios(`http://localhost:5555/DragonBall/${e.target.id.value}` , {
+                                method: "put",
+                                headers: {
+                                    "Content-Type": "application/json"
+                                },
+                                data: {
+                                    nombre: e.target.nombre.value,
+                                    transformacion: e.target.transformacion.value 
+                                }
+                            });
+                            let json = await res.data();
+                            location.reload();
+                        } catch (err) {
+                            console.log(err);
+                            let message = err.response.statusText || "Ocurrio un error";
+                            $form.insertAdjacentHTML("afterend", `<p>Error ${err.response.status}: ${message}</p>`);
+                        }
+                    }
+                    put();
+                }
+            }
+        });
+
+        document.addEventListener("click", e => {
+                if(e.target.matches("button.edit")){
+                    console.log("edit")
+                    $title.textContent = "Editar Personaje";
+                    $form.nombre.value = e.target.dataset.name;
+                    $form.transformacion.value = e.target.dataset.transformacion;
+                    $form.id.value = e.target.dataset.id;
+                }
+
+                if(e.target.matches("button.delete")){
+                    let isDelete = confirm(`¿Estas seguro de eliminar el id: ${e.target.dataset.id}`);
+                    if(isDelete){
+                        //DELETE - DELETE
+                        const del = async () => {
+                            try {
+                                let res = await axios(`http://localhost:5555/DragonBall/${e.target.dataset.id}` , {
+                                    method: "delete",
+                                    headers: {
+                                        "Content-Type": "application/json"
+                                    },
+                                });
+
+                                location.reload();
+
+                            } catch (err) {
+                                console.log(err.response);
+                                let message = err.response.statusText || "Ocurrio un error";
+                                $form.insertAdjacentHTML("afterend", `<p>Error ${err.status}: ${message}</p>`);
+                            }
+                        }
+                        del();
+                    }
+                }
+        })
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*Identificador*/
+#titulo_principal{
+    color: #f72585;
+    text-align: center;
+    margin: 15px;
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h2{
+    color: #3f37c9;
+}
+
+/*Clase CSS*/
+.contenedor{
+    border: 8px solid red;
+    text-align: center;
+    background-color: #f1faee;
+    margin: 15px 100px;
+    padding: 15px;
+}
+.titulo{
+    color: #f72585;
+}
+
+

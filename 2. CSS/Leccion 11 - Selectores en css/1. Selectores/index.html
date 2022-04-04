@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectores combinados en CSS</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Selectores combinados en CSS</h1>
+    </header>
+    <div class="contenedor descendiente">
+        Selectores descendientes (en cualquier nivel interno)
+        <p>Primer reglon</p>
+        <p>Segundo reglon</p>
+        <section>
+            <p>Tercer reglon</p>
+        </section>
+    </div>
+
+    <div class="contenedor hijo">
+        Selectores hijos (child)
+        <p>Primer reglon</p>
+        <p>Segundo reglon</p>
+        <section>
+            <p>Tercer reglon</p>
+        </section>
+    </div>
+
+    <div class="contenedor adyacente">
+        Selector adyacente:
+        <p>Primer reglon</p>
+    </div>
+    <p>Segundo reglon</p>
+    <p>Tercer reglon</p>
+
+    <div class="contenedor hermano">
+        Selector hermano(sibling):
+        <p>Primer reglon</p>
+    </div>
+    <p>Segundo reglon</p>
+    <p>Tercer reglon</p>
+</body>
+</html>

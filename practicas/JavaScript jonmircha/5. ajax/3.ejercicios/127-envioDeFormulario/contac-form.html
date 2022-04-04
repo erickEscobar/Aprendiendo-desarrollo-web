@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Envio de formulario con fetch y FormSubmit</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+</head>
+
+<body>
+    <form class="contact-form">
+        <legend>Envíanos tus comentarios</legend>
+        <input type="text" name="name" placeholder="Escribe tu nombre" title="Nombre solo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required>
+        <input type="email" name="email" placeholder="Escribe tu email" title="Email incorrecto" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
+        <input type="text" name="subject" placeholder="Asunto a tratar" title="El asunto es requerido" required>
+        <textarea name="comments" cols="50" rows="5" placeholder="Escribe tus comentarios" data-pattern="^.{1,255}$" title="Tu comentario no debe exceder los 255 caracteres" required></textarea>
+
+        <input type="submit">
+
+        <div class="contact-form-loader none">
+            <img src="img/load.svg" alt="Cargando">
+        </div>
+        <div class="contact-form-response none">
+            <p>Los datos han sido enviados</p>
+        </div>
+    </form>
+    <script>
+        const $form = document.querySelector(".contact-form");
+        const $inputs = document.querySelectorAll(".contact-form [required]");
+
+        document.addEventListener("DOMContentLoaded", (e) => {
+            console.log($form, $inputs);
+            $inputs.forEach((input) => {
+                const $span = document.createElement("span");
+                $span.id = input.name;
+                $span.textContent = input.title;
+                $span.classList.add("contact-form-error", "none");
+                input.insertAdjacentElement("afterend", $span);
+            });
+
+            document.addEventListener("keyup", (e) => {
+                if (e.target.matches(".contact-form [required]")) {
+                    let pattern = e.target.pattern || e.target.dataset.pattern;
+                    // console.log(e.target, pattern);
+                    if (pattern && e.target.value !== "") {
+                        console.log("El imput tiene patron");
+                        let regex = new RegExp(pattern);
+                        return !regex.exec(e.target.value)
+                            ? document
+                                .getElementById(e.target.name)
+                                .classList.add("is-active")
+                            : document
+                                .getElementById(e.target.name)
+                                .classList.remove("is-active");
+                    }
+                    if (!pattern) {
+                        console.log("El imput no tiene patron");
+
+                        return e.target.value === ""
+                            ? document
+                                .getElementById(e.target.name)
+                                .classList.add("is-active")
+                            : document
+                                .getElementById(e.target.name)
+                                .classList.remove("is-active");
+                    }
+                }
+            });
+
+            document.addEventListener("submit", (e) => {
+                if (e.target.matches(".contact-form")) {
+                    e.preventDefault();
+                    alert("Enviando formulario");
+                    let loader = document.querySelector(".contact-form-loader");
+                    let responsive = document.querySelector(".contact-form-response");
+
+                    loader.classList.remove("none");
+
+                    // setTimeout(() => {
+                    //     loader.classList.add("none");
+                    //     responsive.classList.remove("none");
+                    //     $form.reset();
+                    //     setTimeout(() => responsive.classList.add("none"), 3000);
+                    // }, 3000);
+                    fetch("https://formsubmit.co/ajax/ericking8311@gmail.com", {
+                        method: "POST",
+                        body: new FormData(e.target)
+                    })
+                    .then(res => res.ok ? res.json() : Promise.reject(res))
+                    .then(json => {
+                        console.log(json);
+                        loader.classList.add("none");
+                        responsive.classList.remove("none");
+                        responsive.innerHTML = `<p>${json.message}</p>`;
+                        $form.reset();
+                    })
+                    .catch(err => {
+                        console.log(err);
+                        let message = err.statusText || "Ocurrio un error al enviar intenta nuevamente";
+                        responsive.innerHTML = `<p>Error ${err.status}: ${message}</p>`;
+                    })
+                    .finally(() => {
+                        setTimeout(() => {
+                            responsive.classList.add("none");
+                            responsive.innerHTML = "";
+                        }, 3000);
+                    })
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

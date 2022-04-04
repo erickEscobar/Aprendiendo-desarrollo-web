@@ -1,0 +1,13 @@
+*{
+    background-color: red;
+}
+
+#titulo{
+    color: blue;
+    text-align: center;
+    font-size: 40px;
+    padding: 40px;
+    background-color: brown;
+    margin: 10px;
+}
+

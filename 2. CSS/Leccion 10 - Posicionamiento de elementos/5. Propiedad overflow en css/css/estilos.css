@@ -1,0 +1,13 @@
+h1{
+    text-align: center;
+    color: crimson;
+    font-size: 2em;
+}
+
+.contenedor{
+    border: 3px dashed greenyellow;
+    width: 30%;
+    height: 100px;
+    margin: auto;
+    overflow: auto;
+}

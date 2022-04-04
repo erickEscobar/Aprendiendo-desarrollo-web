@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    /* overflow-x: hidden; */
+}
+body{
+    margin-left: 60px;
+    margin-right: 60px;
+    /* position: relative; */
+}
+
+/* Menu */
+header{
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 60px;
+    right: 60px;
+    z-index: 100;
+}
+.menu{
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+}
+.menu span{
+    display: none;
+}
+.menu ul{
+    width: 1200px;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+.menu li{
+    margin: 10px;
+    padding: 10px;
+
+}
+.menu li a{
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+}
+#icons{
+    width: 130px;
+    display: flex;
+    justify-content: space-between;
+}
+#icons ion-icon{
+    cursor: pointer;
+}
+.linea{
+    border: 1px solid black;
+}
+
+/* Main */
+/* Grid 1 */
+main{
+    margin-top: 120px;
+}
+.grid{
+    width: 100%;
+    display: grid;
+    grid-gap: 15px;
+}
+.grid.uno{
+    grid-template-areas: 
+    "title title title"
+    "img1 div img2";
+}
+.titulo{
+    grid-area: title;
+    text-align: center;
+}
+#img1{
+    grid-area: img1;
+    height: 600px;
+}
+#img2{
+    grid-area: img2;
+    height: 600px;;
+}
+#div{
+    grid-area: div;
+    background: #F7E9E4;
+}
+#div h3{
+    font-size: 2.2em;
+    margin: 130px 15px 30px;
+    text-align: center;
+}
+.boton{
+    background: white;
+    width: 150px;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.1em;
+}
+.boton:hover{
+    outline: 2px solid black;
+    cursor: pointer;
+}
+
+/* Grid 2 */
+.grid.dos{
+    margin: 40px 0;
+    grid-template-areas: 
+    "titulo2 titulo2"
+    "div2 div3";
+    width: 100%;
+}
+#titulo2{
+    grid-area: titulo2;
+    text-align: center;
+}
+#div2{
+    grid-area: div2;
+    position: relative;
+}
+#div2 img{
+    width: 100%;
+}
+#div2 p{
+    position: absolute;
+    bottom: 70px;
+    right: 50px;
+}
+#div3{
+    grid-area: div3;
+    position: relative;
+}
+#div3 img{
+    width: 100%;
+}
+#div3 p{
+    position: absolute;
+    bottom: 70px;
+    right: 50px;
+}
+
+/* Grid 3 */
+.grid.tres{
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 40px 1fr 1fr;
+}
+.grid.tres h2{
+    font-size: 2em;
+    grid-column: 1/9;
+    grid-row: 1/2;
+    text-align: center;
+}
+.grid.tres img{
+    grid-row: 2/3;
+    width: 100%;
+}
+.grid.tres form{
+    width: 30%;
+    margin: 60px auto;
+    grid-row: 3/4;
+    grid-column: 1/9;
+    text-align: center;
+}
+form h3{
+    margin-bottom: 15px;
+}
+form input{
+    width: 100%;
+    height: 38px;
+    padding: 0 5px;
+}
+form p{
+    margin-top: 8px;
+    /* width: 100%; */
+    padding: 8px 0;
+    color: #fff;
+    background-color: #292325;
+    cursor: pointer;
+}
+
+/* Footer */
+footer{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: #F7E9E4;
+    text-align: center;
+    padding: 22px;
+    font-size: 0.9em;
+}

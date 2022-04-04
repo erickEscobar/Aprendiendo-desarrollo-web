@@ -1,0 +1,20 @@
+h1{
+    text-align: center;
+    color: coral;
+}
+
+/*para centrar un div devenos especificar un width y margin auto en izquierda y derecha*/
+div{
+    padding: 10px;
+    border: 15px solid rgb(12, 12, 231);
+    margin: 20px auto;
+    font-size: 20px;
+    background-color: rgb(199, 202, 211);
+    max-width: 300px;
+    box-sizing: border-box;
+}
+
+/*inherit hereda una propiedad del padre*/
+#dentro{
+    padding: inherit;
+}

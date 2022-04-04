@@ -1,0 +1,167 @@
+@media all and (max-width: 1075px){
+    body{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    header{
+        left: 0;
+        right: 0;
+    }
+    #img1{
+        height: 550px;
+    }
+    #img2{
+        height: 550px;;
+    }
+}
+
+@media all and (max-width: 895px){
+    #img1{
+        height: 450px;
+    }
+    #img2{
+        height: 450px;;
+    }
+}
+
+@media all and (max-width: 785px){
+    #img1{
+        height: 350px;
+    }
+    #img2{
+        height: 350px;
+    }
+    #div h3{
+        font-size: 2em;
+        margin: 100px 15px 30px;
+        text-align: center;
+    }
+    .grid.tres form{
+        margin: 20px auto;
+        text-align: center;
+    }
+}
+
+@media all and (max-width: 655px){
+    .grid.uno{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 
+        "title title"
+        "div div"
+        "img1 img2";
+        justify-items: stretch;
+    }
+    .titulo{
+        grid-area: title;
+        text-align: center;
+    }
+    #img1{
+        grid-area: img1;
+        height: 300px;
+    }
+    #img2{
+        grid-area: img2;
+        height: 300px;
+    }
+    #div{
+        grid-area: div;
+        background: #F7E9E4;
+    }
+    #div h3{
+        font-size: 1.9em;
+        margin: 40px 15px 20px;
+    }
+    .boton{
+        width: 150px;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+
+    .grid.tres{
+        /* display: flex; */
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto 1fr 1fr;
+        grid-template-areas: 
+        "h23 h23 h23 h23"
+        "img13 img23 img33 img43"
+        "img53 img63 img73 img83"
+        "form3 form3 form3 form3";
+
+    }
+    .grid.tres h2{
+        grid-area: h23;
+    }
+    .grid.tres #img13{
+        grid-area: img13;
+    }
+    .grid.tres #img23{
+        grid-area: img23;
+    }
+    .grid.tres #img33{
+        grid-area: img33;
+    }
+    .grid.tres #img43{
+        grid-area: img43;
+    }
+    .grid.tres #img53{
+        grid-area: img53;
+    }
+    .grid.tres #img63{
+        grid-area: img63;
+    }
+    .grid.tres #img73{
+        grid-area: img73;
+    }
+    .grid.tres #img83{
+        grid-area: img83;
+    }
+    .grid.tres form{
+        width: 90%;
+        grid-area: form3;
+    }
+}
+
+@media all and (max-width: 470px){
+    main{
+        margin-top: 150px;
+    }
+    .menu{
+        flex-direction: column;
+        flex-wrap: wrap-reverse;
+        align-content: center;
+        align-items: center;
+    }
+    .menu #icons{
+        order: -1;
+    }
+    .menu span{
+        display: inline-block;
+        font-size: 2em;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+    .menu li:hover{
+        background-color: aquamarine;
+    }
+    .menu li:hover a{
+        font-weight: 800;
+    }
+    .menu ul{
+        flex-direction: column;
+        align-items: center;
+        visibility: hidden;
+        overflow: hidden;
+        height: 0;
+        transition-property: visibility, height;
+        transition-duration: .3s, .3s;
+    }
+    .mostrarMenu{
+        visibility: visible !important;
+        overflow: visible !important;
+        height: 250px !important;
+    }
+    .grid.tres form{
+        width: 90%;
+    }
+}

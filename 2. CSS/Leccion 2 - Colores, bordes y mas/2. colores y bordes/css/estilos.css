@@ -1,0 +1,18 @@
+#titulo{
+    text-align: center;
+    font-size: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.rojo{
+    border: 10px solid firebrick;
+}
+.rosa{
+    border: 10px dotted #ff1493;
+}
+.amarillo{
+    border: 10px dashed hsl(51, 100%, 50%);
+}
+.azul{
+    border: 10px groove rgb(70, 130, 180);
+}

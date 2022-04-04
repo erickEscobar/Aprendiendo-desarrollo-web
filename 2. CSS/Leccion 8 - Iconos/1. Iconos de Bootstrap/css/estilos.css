@@ -1,0 +1,23 @@
+h1{
+    text-align: center;
+    color: crimson;
+    font-size: 2.5em;
+    font-weight: 600;
+    text-shadow: 2px 2px 2px #3d3b3b;
+}
+
+div{
+    padding: 15px;
+    width: 300px;
+    margin: auto;
+}
+
+.icono-rojo{
+    font-size: 3em;
+    color: crimson;
+}
+
+.icono-azul{
+    font-size: 3em;
+    color: blue;
+}

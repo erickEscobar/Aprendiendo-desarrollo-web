@@ -1,0 +1,10 @@
+h1{
+    font-size: 1em;
+}
+.textoPequeno{
+    font-size: 1em;
+    transition: font-size, 2s;
+}
+.textoGrande{
+    font-size: 1.2em;
+}

@@ -1,0 +1,16 @@
+/* Codigo para cambiar a dark light */
+main{
+    background-color: black;
+}
+
+h2, h3, #mostrarReloj{
+    color: var(--color-amarillo);
+}
+.stage{
+    background-color: white;
+    outline: 10px white solid;
+}
+
+.btn-darkLight-agg{
+    background-color: var(--color-amarillo);
+}

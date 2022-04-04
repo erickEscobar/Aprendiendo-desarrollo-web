@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #imgw{
+            margin-top: 30px;
+            width: 400px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="d">Cambiar imagen</h1>
+    <button onclick="cambiar()">Cambiar</button>
+    <img id="imgw" src="img/svg1.svg" alt="img1">
+    <div id="numeros">fd</div>
+    <script>
+        let contador = 0;
+        function cambiar(){
+            if(contador % 2 == 0){
+                document.getElementById('imgw').src = "img/svg2.svg";
+            }
+            else{
+                document.getElementById('imgw').src = "img/svg1.svg";
+            }
+            contador++;
+            console.log(contador);
+        }
+        let text = '';
+        for(let i = 0; i<10; i++){
+            text += i + '<br>'
+        }
+        document.getElementById('numeros').innerHTML = text;
+    </script>
+</body>
+</html>

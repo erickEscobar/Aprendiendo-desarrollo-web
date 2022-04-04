@@ -1,0 +1,30 @@
+h1{
+    text-align: center;
+    font-size: 1.3em;
+    color: firebrick;
+}
+
+div.estatico{
+    position: static;
+    padding: 15px;
+    border: 3px solid greenyellow;
+    background-color: whitesmoke;
+}
+
+div.relativo{
+    position: relative;
+    top: 10px;
+    left: 10px;
+    padding: 15px;
+    border: 3px solid blueviolet;
+    background-color: whitesmoke;
+}
+
+div.absoluto{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border: 3px solid cadetblue;
+    padding: 118px;
+    z-index: -1;
+}

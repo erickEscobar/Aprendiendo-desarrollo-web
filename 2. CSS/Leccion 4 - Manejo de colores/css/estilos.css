@@ -1,0 +1,48 @@
+h1{
+    color: orange;
+    font-size: 50px;
+    text-align: center;
+}
+
+.caja{
+    padding: 10px;
+    width: 130px;
+    height: 80px;
+    text-align: center;
+    margin: 5px auto;
+    color: white;
+    font-size: 15px;
+    float: left;
+}
+
+.rojo{
+    background-color: firebrick;
+}
+
+.rosa{
+    background-color: deeppink;
+}
+
+.morado{
+    background-color: rgb(128, 0, 128);
+}
+
+.moradotrans{
+    background-color: rgba(128, 0, 128, 0.5);
+}
+
+.azul{
+    background-color: #1f8fff;
+}
+
+.azultrans{
+    background-color: #1e8fff86;
+}
+
+.naranja{
+    background-color: hsl(39, 100%, 50%);
+}
+
+.naranjatrans{
+    background-color: hsla(39, 100%, 50%, 0.5);
+}

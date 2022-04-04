@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    background-color: #FEE4E5;
+}
+
+main{
+    width: 100%;
+}
+
+.principal{
+    margin: 60px 0;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Imagen principal */
+.img0{
+    margin: 20px 0;
+    width: 400px;
+
+}
+
+main section:first-child{
+    width: 440px;
+    border: none;
+}
+
+
+
+/* Iniciar secion */
+main section{
+    width: 350px;
+    box-sizing: border-box;
+}
+
+main section.sectImg{
+    margin-right: 53px;
+}
+
+.caja{
+    background-color: white;
+    padding: 0 30px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.664);
+}
+
+.caja.tres{
+    background-color: #FEE4E5;
+    border: none;
+}
+
+h1{
+    font-family: 'MonteCarlo', cursive;
+    font-size: 3em;
+    letter-spacing: 4px;
+    text-align: center;
+    margin: 0 0 20px;
+}
+
+form{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.texto{
+    width: 90%;
+    margin: 5px auto;
+    padding: 6px;
+    box-sizing: border-box;
+}
+
+input.boton{
+    margin-top: 8px;
+    width: 90%;
+    padding: 4px 0;
+    cursor: pointer;
+}
+
+.hr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 10px auto;
+    margin-bottom: 20px;
+}
+
+.hr hr{
+    width: 110px;
+    height: 0px;
+}
+
+.hr div{
+    margin: 0 15px;
+}
+
+.secionFacebook a{
+    text-decoration: none;
+}
+
+.secionFacebook i{
+    font-size: 1.3em;
+    color: blue;
+}
+
+form a{
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.caja.dos p{
+    text-align: center;
+    width: 100%;
+    margin: 15px 0;
+    display: inline-block;
+}
+
+.caja.dos p a{
+    text-decoration: none;
+    color: purple;
+}
+
+.caja.tres p{
+    text-align: center;
+}
+
+.caja.tres div{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.caja.tres div img{
+    width: 130px;
+    
+}
+
+
+/* Footer */
+footer{
+    margin: 120px 0 50px;
+}
+
+.piePagina div{
+    text-align: center;
+    margin-bottom: 15px;
+}
+.piePagina p{
+    display: inline-block;
+    margin: 0 10px;
+    color: #8e8e8e;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width:910px){
+    .principal{
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo DOM</title>
+</head>
+<body>
+    <h1>Manejo DOM con JavaScript</h1>
+    <div>
+        Nombre: <input type="text" id="nombre"><br><br>
+        Apellido: <input type="text" id="apellido">
+    </div>
+    <script>
+        document.getElementById('nombre').addEventListener('focus', cambiar);
+        document.getElementById('nombre').addEventListener('blur', regresar);
+        document.getElementById('apellido').addEventListener('focus', cambiar);
+        document.getElementById('apellido').addEventListener('blur', regresar);
+
+        function cambiar(evento){
+            evento.target.style.background = 'yellow';
+        }
+        function regresar(evento){
+            evento.target.style.background = 'white';
+        }
+    </script>
+</body>
+</html>

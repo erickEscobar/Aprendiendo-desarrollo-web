@@ -1,0 +1,12 @@
+
+{
+    "candena": "Jon",
+    "numero": 35,
+    "booleano": true,
+    "arreglo": ["correr", "programar", "cocinar"],
+    "objeto": {
+        "twiter": "@erick8311",
+        "email": "ericking8311@gmail.com"
+    },
+    "nulo": null
+}

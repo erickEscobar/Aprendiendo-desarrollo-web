@@ -1,0 +1,17 @@
+ol{
+    list-style-type: none;
+    counter-reset: iterador;
+}
+
+ol li{
+    counter-increment: iterador;
+}
+
+ol li::before{
+    content: 'Curso ' counter(iterador) ') ';
+    color: #ff6f00;
+}
+
+ol li::after{
+    content: '.';
+}

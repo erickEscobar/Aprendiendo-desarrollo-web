@@ -1,0 +1,32 @@
+h1{
+    text-align: center;
+    text-shadow: 2px 2px 5px #a8dadc;
+    color: #e63946;
+}
+
+div.contenedor{
+    width: 30%;
+    height: 20%;
+    margin: auto;
+    border: 4px solid #a8dadc;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px 5px grey;
+    position: relative;
+}
+
+div.contenedor img{
+    width: 100%;
+}
+
+div.cabecero{
+    background-color: #4cc9f0;
+}
+
+div.cuerpo{
+    color: cornflowerblue;
+    padding-top: 10px;
+    font-size: 1.2em;
+    font-weight: bolder;
+    text-shadow: 2px 2px 2px rgb(177, 177, 177);
+}

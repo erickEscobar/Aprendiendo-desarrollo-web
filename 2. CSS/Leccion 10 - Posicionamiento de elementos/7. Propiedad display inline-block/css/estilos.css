@@ -1,0 +1,42 @@
+h1{
+    text-align: center;
+    color: crimson;
+    font-size: 2em;
+}
+
+.menu{
+    list-style: none;
+    text-align: center;
+}
+
+.menu li{
+    display: inline-block;
+    padding: 15px;
+    margin: 20px;
+    background-color: blueviolet;
+    border-radius: 5px;
+}
+
+.menu li a{
+    text-decoration: none;
+    color: white;
+}
+
+.contenedor{
+    width: 80%;
+    height: 20%;
+    overflow: auto;
+    margin: auto;
+    border: 3px dashed cornflowerblue;
+}
+
+span{
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.1em;
+    background-color: cornflowerblue;
+    padding: 30px;
+    height: 30px;
+    border: 1px solid red;
+    display: inline-block;
+}

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD API REST AJAX</title>
+</head>
+<body>
+    <h1>CRUD API REST AJAX</h1>
+    <section class="crud">
+        <article>
+            <h2 class="crud-title">Agregar personaje de dragon ball</h2>
+            <form action="#" class="crud-form">
+                <input type="text" name="nombre" placeholder="nombre" required><br>
+                <input type="text" name="transformacion" placeholder="transformacion" required><br>
+                <input type="submit" value="Enviar">
+                <input type="hidden" name="id">
+            </form>
+            <!-- <button id="pppp">Enviar</button> -->
+        </article>
+        <article>
+            <h2>Ver personajes de dragon ball</h2>
+            <table class="crud-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Tranformación</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </article>
+    </section>
+    
+    <template id="crud-template">
+        <tr>
+            <td class="name">h</td>
+            <td class="transformacion"></td>
+            <td>
+                <button class="edit">Editar</button>
+                <button class="delete">Eliminar</button>
+            </td>
+        </tr>
+    </template>
+
+    <script>
+        const $table = document.querySelector(".crud-table"),
+            $title = document.querySelector(".crud-title"),
+            $form = document.querySelector(".crud-form"),
+            $template = document.getElementById("crud-template"),
+            fragment = document.createDocumentFragment();
+        let clon = document.createElement('div')
+
+        console.log($table,$title,$form,$template);
+
+        const ajax = (option) => {
+            let {url, method, success, error, data} = option;
+            const xhr = new XMLHttpRequest();
+
+            xhr.addEventListener('readystatechange', e => {
+                if(xhr.readyState !==4) return
+
+                if(xhr.status >=200 && xhr.status < 300){
+                    let json = JSON.parse(xhr.responseText);
+                    success(json);
+                }
+                else{
+                    let message = xhr.statusText || "Ocurrio un error";
+                    error(`Error ${xhr.status}: ${message}`);
+                }
+            });
+
+            xhr.open(method || "GET", url);
+            xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");
+            xhr.send(JSON.stringify(data));
+
+        }
+
+        const getAll = () => {
+           ajax({
+               url: "http://localhost:5555/DragonBall",
+               success: (res) => {
+                   console.log(res);
+                   res.forEach(element => {
+                        clon.appendChild($template.content.cloneNode(true));//Clonamos el template porque no se puede utilizar
+
+                        clon.querySelector(".name").textContent = element.nombre;
+                        clon.querySelector(".transformacion").textContent = element.transformacion;
+                        clon.querySelector(".edit").dataset.id = element.id;
+                        clon.querySelector(".edit").dataset.name = element.nombre;
+                        clon.querySelector(".edit").dataset.transformacion = element.transformacion;
+                        clon.querySelector(".delete").dataset.id = element.id;
+
+                        fragment.appendChild(clon.querySelector('tr'));
+                        // console.log(clon.querySelector('.name'));
+                   });
+                   $table.querySelector('tbody').appendChild(fragment);
+                },
+               error: (err) => {
+                   console.log(err);
+                   $table.insertAdjacentHTML("afterend", `<p>${err}</p>`);
+                },
+           }) 
+        }
+        document.addEventListener("DOMContentLoaded", getAll);
+
+        
+        document.addEventListener("submit", e => {
+            if(e.target === $form){
+                e.preventDefault();
+
+                if(!e.target.id.value){
+                    //CREATE - POST
+                    ajax({
+                        url: `http://localhost:5555/DragonBall`,
+                        method: 'POST',
+                        success: (res) => location.reload(),
+                        error: (err) => {
+                            console.log(err);
+                            $form.insertAdjacentHTML("afterend", `<p>${err}</p>`);
+                        },
+                        data: {
+                            nombre: e.target.nombre.value,
+                            transformacion: e.target.transformacion.value
+                        }
+                    })
+                }
+                else{
+                    //UPDATE - PUT
+                    ajax({
+                        url: `http://localhost:5555/DragonBall/${e.target.id.value}`,
+                        method: 'PUT',
+                        success: (res) => location.reload(),
+                        error: (err) => {
+                            console.log(err);
+                            $form.insertAdjacentHTML("afterend", `<p>${err}</p>`);
+                        },
+                        data: {
+                            nombre: e.target.nombre.value,
+                            transformacion: e.target.transformacion.value
+                        }
+                    })
+                }
+            }
+        })
+
+        document.addEventListener("click", e => {
+                if(e.target.matches("button.edit")){
+                    console.log("edit")
+                    $title.textContent = "Editar Personaje";
+                    $form.nombre.value = e.target.dataset.name;
+                    $form.transformacion.value = e.target.dataset.transformacion;
+                    $form.id.value = e.target.dataset.id;
+                }
+
+                if(e.target.matches("button.delete")){
+                    console.log("delete")
+                    let isDelete = confirm(`¿Estas seguro de eliminar el id: ${e.target.dataset.id}`);
+
+                    if(isDelete){
+                        //DELETE - DELETE
+                        ajax({
+                            url: `http://localhost:5555/DragonBall/${e.target.dataset.id}`,
+                            method: 'DELETE',
+                            success: (res) => location.reload(),
+                            error: (err) => {
+                                console.log(err);
+                                $form.insertAdjacentHTML("afterend", `<p>${err}</p>`);
+                            }
+                        })
+                    }
+                }
+        })
+
+    </script>
+    
+</body>
+</html>
