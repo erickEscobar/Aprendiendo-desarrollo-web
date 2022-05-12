@@ -1,0 +1,152 @@
+:root{
+    --colorBtn: #d3d6da;
+    --colorCorrect: #6aaa64;
+    --colorError: #787c7e;
+    --colorNotPosicion: #c9b458;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    box-sizing: border-box;
+}
+*::after, *::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* HEADER */
+header{
+    /* display: flex;
+    justify-content: center; */
+    position: relative;
+}
+h1{
+    text-align: center;
+}
+
+/* COMPLETAR */
+table{
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+    position: relative;
+}
+table::after{
+    content: "";
+    position: absolute;
+    width: 100px;
+    border-top: 1px solid rgba(135, 138, 140, 0.471);
+    top: -10px;
+    left: -3.5px;
+    width: 100%;
+}
+td{
+    border: 2px solid rgba(135, 138, 140, 0.471);
+    width: 58px;
+    height: 33px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-right: 8px;
+}
+tr{
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+
+/* TECLADO */
+/* .teclado{
+    max-width: 500px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(10, 40px);
+    grid-gap: 5px;
+    grid-auto-rows: minmax(50px, auto);
+}
+.teclado button{
+    display: inline-block;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    font-size: 15px;
+}
+.teclado button img{
+    width: 50%;
+} */
+.teclado {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    max-width: 518px;
+    margin: auto;
+    overflow: auto;
+    flex-direction: row;
+}
+
+.teclado button {
+    cursor: pointer;
+    width: 47px;
+    height: 60px;
+    margin: 1.5px;
+    background-color: var(--colorBtn);
+    font-size: 17px;
+    font-weight: 500;
+    border: none;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    transition: opacity .1s linear;
+    -webkit-transition: opacity .1s linear;
+    -moz-transition: opacity .1s linear;
+    -ms-transition: opacity .1s linear;
+    -o-transition: opacity .1s linear;
+}
+.teclado button img{
+    width: 40%;
+}
+.teclado button.btnBig{
+    width: 71px;
+}
+.teclado button:hover{
+    opacity: 70%;
+}
+
+
+/* Color de letras correctas e incorrectas*/
+.colorCorrect{
+    background-color: var(--colorCorrect);
+}
+.colorError{
+    background-color: var(--colorError);
+}
+.colorNotPosicion{
+    background-color: var(--colorNotPosicion);
+}
+
+
+/* LUZ */
+#iconoLuz{
+    position: absolute;
+    right: 10px;
+    top: 14px;
+    font-size: 28px;
+    user-select: none;
+    cursor: pointer;
+}
+.dark{
+    background-color: #000;
+    color: #fff;
+}
