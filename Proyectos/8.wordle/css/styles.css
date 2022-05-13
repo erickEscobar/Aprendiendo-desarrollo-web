@@ -127,13 +127,13 @@ tr{
 
 /* Color de letras correctas e incorrectas*/
 .colorCorrect{
-    background-color: var(--colorCorrect);
+    background-color: var(--colorCorrect) !important;
 }
 .colorError{
-    background-color: var(--colorError);
+    background-color: var(--colorError) !important;
 }
 .colorNotPosicion{
-    background-color: var(--colorNotPosicion);
+    background-color: var(--colorNotPosicion) !important;
 }
 
 
