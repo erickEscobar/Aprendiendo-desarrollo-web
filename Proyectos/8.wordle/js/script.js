@@ -163,7 +163,7 @@ function teclearEnviar(){
 }
 
 function perdistes(){
-    alert('Perdiste bro 😥');
+    alert('Perdiste bro 😥 la palabra era: ' + palabra);
     palabra = diccionario[Math.floor((Math.random() * (21 - 0 + 1)) + 0)];
 }
 function ganastes(){
