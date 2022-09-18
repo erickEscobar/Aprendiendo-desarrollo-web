@@ -1,4 +1,4 @@
-use prueba1;
+use basenueva;
 
 -- crear una tabla (con sus campos y el tipo de dato de los campos)
 create table t_prueba(
@@ -18,3 +18,11 @@ show tables;
 
 -- mostrar todas las bases de datos
 show databases;
+
+-- tarea
+create table t_usuario(
+				id_usuario int auto_increment,
+                usuario varchar(250),
+                email varchar(250),
+                primary key(id_usuario)
+);
